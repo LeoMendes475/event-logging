@@ -19,8 +19,8 @@ const checkWebsitesUseCase = new CheckWebsitesUseCase(
   websiteRepository
 );
 
-router.post("/check-websites", async (ctx) => {
-  const { urls } = ctx.request.body;
+router.post("/check-website", async (ctx) => {
+  const { urls }: any = ctx.request.body;
   if (!Array.isArray(urls)) {
     ctx.status = 400;
     ctx.body = { error: "Invalid input, expected an array of URLs" };
